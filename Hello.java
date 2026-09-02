@@ -1,6 +1,15 @@
-public class Hello {
-    public static void main(String[] args) {
-        System.out.println("Hello world");
-        
-    }
+pipeline {
+ 	agent any
+ stages {
+ stage('Compile') {
+ 		steps { 
+bat 'javac Hello.java' 
 }
+ }
+ stage('Run') {
+steps {
+ bat 'java Hello'
+ }
+ }
+ }
+ }
